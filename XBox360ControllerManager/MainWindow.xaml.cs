@@ -8,6 +8,11 @@ using ContextMenu = System.Windows.Forms.ContextMenu;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using MenuItem = System.Windows.Forms.MenuItem;
 
+
+using WindowsInput;
+using WindowsInput.Native;
+
+
 namespace XBox360ControllerManager
 {
     /// <summary>
@@ -48,7 +53,12 @@ namespace XBox360ControllerManager
                 if (AnyGamepadHasButton(XBox360GamepadButton.Guide) && !IsVisible)
                 {
                     guideCounter++;
-                    if (guideCounter == 10)
+                    if (guideCounter == 1)
+                    {
+                        var sim = new InputSimulator();
+                        sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.VK_G);
+                    }   
+                    else if (guideCounter == 10)
                     {
                         Show();
                     }
