@@ -10,11 +10,10 @@ Manage XBox360 controller to power off after game play
 
 ### Workflow
 #### Phase 1
-- Convert from WPF to UWP project
-- Add XInput detection
-- Add ability to poweroff Xbox 360 controller
-- Add ability to detect if GameBar open
-- Add Keysender
+- Create UWP project specially for GameBar purposes
+- Add ability to detect if GameBar is open, in UWP Project
+- Add interprocess communication between UWP and WPF Projects
+- Add Keysender which can send Raw Input to Xbox Game Bar, in WPF Project OR UWP Project
 
 #### Phase 2
 - Add System Tray view
